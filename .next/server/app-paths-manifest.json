@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/services/3d-design-motion/page": "app/services/3d-design-motion/page.js",
+  "/services/brand-identity/page": "app/services/brand-identity/page.js",
+  "/services/custom-code/page": "app/services/custom-code/page.js",
+  "/services/mvp-product-design/page": "app/services/mvp-product-design/page.js",
+  "/services/page": "app/services/page.js",
+  "/services/pitch-decks-collateral/page": "app/services/pitch-decks-collateral/page.js",
+  "/services/website-design-dev/page": "app/services/website-design-dev/page.js"
+}

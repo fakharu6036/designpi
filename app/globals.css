@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+:root {
+  /* DesignPi Brand Colors */
+  --primary: #1a1a1a;
+  --accent: #d2de26;
+  --highlight: #ff4e22;
+  --deep-blue: #0f1c2e;
+  --soft-white: #f8f8f8;
+  --pure-white: #ffffff;
+
+  /* Light mode defaults */
+  --background: var(--pure-white);
+  --foreground: var(--primary);
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  /* Backend UI Radius System */
+  --radius-card: 12px;
+  --radius-widget: 10px;
+  --radius-table: 8px;
+  --radius-input: 6px;
+  --radius-avatar: 999px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-highlight: var(--highlight);
+  --color-deep-blue: var(--deep-blue);
+  --color-soft-white: var(--soft-white);
+  --color-pure-white: var(--pure-white);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: "Inter", var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-inter: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--soft-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--highlight);
+}
+
+body {
+  background: var(--pure-white);
+  color: var(--primary);
+  font-family: "Inter", var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Assistant chat bubble positioning */
+/* assistant-chat styles removed */
+
+/* Global UX improvements */
+button,
+.btn {
+  transition: transform 200ms ease, box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card,
+.panel {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.card:hover,
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Typography and spacing */
+:root {
+  --font-size-base: 16px;
+  --line-height-base: 1.7;
+}
+html {
+  font-size: var(--font-size-base);
+}
+p {
+  line-height: var(--line-height-base);
+}
+
+/* Responsive sections */
+.section {
+  padding: clamp(2rem, 4vw, 4rem) 0;
+}
+.hero,
+.services,
+.pricing,
+.site-footer {
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Floating tilted images */
+.floating-image {
+  position: absolute;
+  will-change: transform;
+  transform: rotate(-3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.floating-image:hover {
+  transform: rotate(-1deg) translateY(-4px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  color: var(--primary);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+h3,
+h4 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+h5,
+h6 {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+p {
+  color: #4a4a4a;
+  margin-bottom: 1.25rem;
+}
+
+a {
+  color: var(--primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+/* Ensure anchor elements with `text-white` render white regardless of global link color */
+a.text-white {
+  color: #ffffff !important;
+}
+
+.highlight-text {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.text-highlight {
+  color: var(--highlight);
+}
+
+/* Force white text inside dark CTA blocks to ensure readability */
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary h4,
+.bg-primary h5,
+.bg-primary h6,
+.bg-primary p,
+.bg-primary a,
+.bg-black h1,
+.bg-black h2,
+.bg-black h3,
+.bg-black h4,
+.bg-black h5,
+.bg-black h6,
+.bg-black p,
+.bg-black a {
+  color: #fff !important;
+}
+/* Force white text in dark containers, but don't override explicit button styles */
+.bg-primary a:not(.btn-white):not(.btn-outline-white),
+.bg-black a:not(.btn-white):not(.btn-outline-white) {
+  color: #fff !important;
+}
+
+/* Fallback: aggressively force white text for dark sections when needed */
+.force-white h1,
+.force-white h2,
+.force-white h3,
+.force-white h4,
+.force-white h5,
+.force-white h6,
+.force-white p,
+.force-white a,
+.force-white span,
+.force-white li {
+  color: #ffffff !important;
+
+  /* Ensure white buttons always render dark text even inside dark containers */
+  .btn-white,
+  button.btn-white,
+  a.btn-white {
+    background-color: var(--pure-white) !important;
+    color: var(--primary) !important;
+    border-color: var(--pure-white);
+  }
+
+  /* Outline variant on dark backgrounds: white stroke, white text */
+  .btn-outline-white,
+  button.btn-outline-white,
+  a.btn-outline-white {
+    background-color: transparent !important;
+    color: var(--color-white) !important;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--color-white) !important;
+    transition: background-color var(--default-transition-duration)
+        var(--default-transition-timing-function),
+      color var(--default-transition-duration)
+        var(--default-transition-timing-function),
+      box-shadow var(--default-transition-duration)
+        var(--default-transition-timing-function);
+  }
+
+  .btn-outline-white:hover,
+  button.btn-outline-white:hover,
+  a.btn-outline-white:hover {
+    background-color: color-mix(
+      in oklab,
+      var(--color-white) 15%,
+      transparent
+    ) !important; /* bg-white/15 */
+    color: var(--color-white) !important;
+  }
+
+  .btn-white,
+  button.btn-white,
+  a.btn-white {
+    background-color: var(--pure-white) !important;
+    color: var(--primary) !important;
+    border-color: var(--pure-white);
+    transition: background-color var(--default-transition-duration)
+        var(--default-transition-timing-function),
+      color var(--default-transition-duration)
+        var(--default-transition-timing-function),
+      box-shadow var(--default-transition-duration)
+        var(--default-transition-timing-function);
+  }
+
+  .btn-white:hover,
+  button.btn-white:hover,
+  a.btn-white:hover {
+    background-color: color-mix(
+      in oklab,
+      var(--pure-white) 92%,
+      transparent
+    ) !important; /* soft-white */
+    color: var(--primary) !important;
+  }
+
+  /* Ensure nested svg icons match button text for visibility */
+  .btn-outline-white svg,
+  .btn-white svg {
+    color: currentColor;
+    stroke: currentColor;
+  }
+
+  /* Base CTA size utility to standardize buttons site-wide */
+  .btn,
+  button.btn,
+  a.btn {
+    height: calc(var(--spacing) * 10);
+    padding-inline: calc(var(--spacing) * 4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    border-radius: 3.40282e38px; /* full */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

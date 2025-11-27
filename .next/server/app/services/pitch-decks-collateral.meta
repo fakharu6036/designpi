@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/services/layout,_N_T_/services/pitch-decks-collateral/layout,_N_T_/services/pitch-decks-collateral/page,_N_T_/services/pitch-decks-collateral"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/services/pitch-decks-collateral/__PAGE__",
+    "/services/pitch-decks-collateral",
+    "/services",
+    "/_index",
+    "/_head"
+  ]
+}

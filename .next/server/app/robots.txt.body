@@ -1,0 +1,15 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/*
+Disallow: /portal/*
+Disallow: /api/*
+Disallow: /auth/*
+Disallow: /blog/search*
+
+User-Agent: GPTBot
+Disallow: /
+
+User-Agent: ChatGPT-User
+Disallow: /
+
+Sitemap: https://designpi.com/sitemap.xml
